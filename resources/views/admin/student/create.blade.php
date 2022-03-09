@@ -33,19 +33,13 @@
             @endif
             <div class="row">
                 <div class="card col-lg-12">
-                    <form class="form" action="{{route('basicSetting.update')}}" enctype="multipart/form-data"
-                        method="POST">
+                    <form class="form" action="{{route('student.store')}}" enctype="multipart/form-data" method="POST">
                         @csrf
                         <div class="card-body">
                             <div class="form-group row">
                                 <div class="col-lg-3">
-                                    <label for="">name</label>
-                                    <input type="name" placeholder="student name" class="form-control"
-                                        value="{{$student->name ?? ''}}" name="name" value="">
-                                </div>
-                                <div class="col-lg-3">
                                     <label for="">roll</label>
-                                    <input type="roll" placeholder="student roll" class="form-control"
+                                    <input type="roll" name="roll" placeholder="student roll" class="form-control"
                                         value="{{$student->roll ?? ''}}" roll="roll" value="">
                                 </div>
                                 <div class="col-lg-3">
@@ -55,13 +49,23 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label for="">session</label>
-                                    <input type="session" placeholder="eg: 2018 - 2019" class="form-control"
-                                        value="{{$student->session ?? ''}}" name="session" value="">
+                                    <select name="session" class="form-control" id="">
+                                        <option value="" disabled>Select Session</option>
+                                        <option value="2019-2020">2019-2020</option>
+                                    </select>
                                 </div>
                                 <div class="col-lg-3">
-                                    <label for="">class</label>
-                                    <input type="class" placeholder="eg: XI - XII " class="form-control"
-                                        value="{{$student->class ?? ''}}" name="class" value="">
+                                    <label for="">Type</label>
+                                    <select name="type" class="form-control" id="">
+                                        <option value="" disabled>Select Student type</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="Irregular">Irregular</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label for="">Testimonial text</label>
+                                    <textarea class="form-control" name="testimonial_text" id="" cols="30"
+                                        rows="10">{{$settings->testimonial_text ?? ''}}</textarea>
                                 </div>
                             </div>
                             <div class="">

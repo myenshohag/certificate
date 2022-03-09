@@ -17,6 +17,7 @@ class CreateBasicSettingsTable extends Migration
             $table->id();
             $table->string('college_code')->nullable();
             $table->string('college_name')->nullable();
+            $table->text('testimonial_text')->nullable();
             $table->timestamps();
         });
     }

@@ -40,4 +40,6 @@ Route::group([
     Route::post('/update-settings', [App\Http\Controllers\Admin\BasicSettingsController::class, 'updateSettings'])->name('basicSetting.update');
     Route::get('/student-management', [App\Http\Controllers\Admin\StudentController::class, 'student'])->name('student');
     Route::get('/new-student', [App\Http\Controllers\Admin\StudentController::class, 'createNewStudent'])->name('student.create');
+    Route::post('/store-new-student', [App\Http\Controllers\Admin\StudentController::class, 'storeNewStudent'])->name('student.store');
+    Route::get('/delete-student/{student}', [App\Http\Controllers\Admin\StudentController::class, 'deleteStudent'])->name('delete.student');
 });

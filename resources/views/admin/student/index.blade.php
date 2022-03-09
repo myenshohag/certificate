@@ -40,62 +40,29 @@
                         <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
                             <thead>
                                 <tr>
-                                    <th style="color: black !important">Causale</th>
-                                    <th style="color: black !important">Causale Description</th>
-                                    <th style="color: black !important">Date</th>
-                                    <th style="color: black !important">Name Projetc</th>
-                                    <th style="color: black !important">Amount</th>
+                                    <th style="color: black !important">Roll</th>
+                                    <th style="color: black !important">Registration</th>
+                                    <th style="color: black !important">Session</th>
+                                    <th style="color: black !important">Type</th>
                                     <th style="color: black !important">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($students as $student)
                                 <tr>
-                                    <td>asdas</td>
-                                    <td>asdas</td>
-                                    <td>asdasdsa</td>
-                                    <td>asdas</td>
-                                    <td>asdas</td>
+                                    <td>{{$student->roll ?? ''}}</td>
+                                    <td>{{$student->registration ?? ''}}</td>
+                                    <td>{{$student->session ?? ''}}</td>
+                                    <td>{{$student->type ?? ''}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-xs btn-primary font-weight-bold mr-2"><i
-                                                class="fa fa-eye"></i></a>
                                         <a href="#" class="btn btn-xs btn-info font-weight-bold mr-2"><i
                                                 class="fa fa-edit"></i></a>
-                                        <a href="#" id="delete" class="btn btn-xs btn-danger font-weight-bold mr-2"><i
+                                        <a href="{{route('delete.student', $student->id)}}" id="delete"
+                                            class="btn btn-xs btn-danger font-weight-bold mr-2"><i
                                                 class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>asdas</td>
-                                    <td>asdas</td>
-                                    <td>asdasdsa</td>
-                                    <td>asdas</td>
-                                    <td>asdas</td>
-                                    <td>
-                                        <a href="#" class="btn btn-xs btn-primary font-weight-bold mr-2"><i
-                                                class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-info font-weight-bold mr-2"><i
-                                                class="fa fa-edit"></i></a>
-                                        <a href="#" id="delete" class="btn btn-xs btn-danger font-weight-bold mr-2"><i
-                                                class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>asdas</td>
-                                    <td>asdas</td>
-                                    <td>asdasdsa</td>
-                                    <td>asdas</td>
-                                    <td>asdas</td>
-                                    <td>
-                                        <a href="#" class="btn btn-xs btn-primary font-weight-bold mr-2"><i
-                                                class="fa fa-eye"></i></a>
-                                        <a href="#" class="btn btn-xs btn-info font-weight-bold mr-2"><i
-                                                class="fa fa-edit"></i></a>
-                                        <a href="#" id="delete" class="btn btn-xs btn-danger font-weight-bold mr-2"><i
-                                                class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

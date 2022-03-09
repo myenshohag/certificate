@@ -41,15 +41,20 @@
                         @csrf
                         <div class="card-body">
                             <div class="form-group row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <label for="">College Code</label>
                                     <input type="text" class="form-control" value="{{$settings->college_code ?? ''}}"
                                         placeholder="college code" name="college_code" value="">
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-8">
                                     <label for="">College Name</label>
                                     <input type="text" class="form-control" value="{{$settings->college_name ?? ''}}"
                                         placeholder="college name" name="college_name" value="">
+                                </div>
+                                <div class="col-lg-12">
+                                    <label for="">Testimonial text</label>
+                                    <textarea class="form-control" name="testimonial_text" id="" cols="30"
+                                        rows="10">{{$settings->testimonial_text ?? ''}}</textarea>
                                 </div>
                             </div>
                             <div class="">

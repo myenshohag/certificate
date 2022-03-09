@@ -12,5 +12,6 @@ class BasicSetting extends Model
     protected $fillable = [
         'college_name',
         'college_code',
+        'testimonial_text',
     ];
 }
